@@ -12,7 +12,7 @@ timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://yoursite.com
+url: http://www.lred.me
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -63,7 +63,7 @@ pagination_dir: page
 # Extensions
 ## Plugins: http://hexo.io/plugins/
 ## Themes: http://hexo.io/themes/
-theme: landscape
+theme: landscape-plus
 
 # Deployment
 ## Docs: http://hexo.io/docs/deployment.html
@@ -72,3 +72,11 @@ deploy:
   repository: git@github.com:fzred/fzred.github.io.git
   branch: master
   message: hexo deploy
+
+# Links
+links:
+  主题作者: http://xiguabaobao.com
+  热前端: http://reqianduan.com
+  
+# Duoshuo
+duoshuo_shortname: lred
