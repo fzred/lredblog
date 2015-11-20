@@ -23,8 +23,8 @@ render_drafts: true
 * [评论插件](#评论插件)
 * [文章搜索](#文章搜索)
 * [处理原先的文章地址](#处理原先的文章地址)
-* [部署到github pages上](#部署到github pages上)
-* [github pages域名绑定](#github pages域名绑定)
+* [部署到github pages上](#部署到github_pages上)
+* [github pages域名绑定](#github_pages域名绑定)
 * [常用插件](#常用插件)
 
 ## hexo介绍
@@ -105,6 +105,13 @@ GitHub Pages 自定义404页面非常容易，直接在source根目录下创建�
 # Duoshuo
 duoshuo_shortname: lred #你在 多说 的域名 比如我说是 lred.duoshuo.com  就填 lred
 ```
+* 打开文件 `\themes\landscape\layout/_partial/article.ejs` 最后添加
+```html
+<!-- 多说公共js代码 end -->
+<% if (config.disqus_shortname){ %>
+ <div id="ds-thread" class="ds-thread" data-thread-key="<%= post.path %>" data-title="<%= post.title %>" data-url="<%= post.permalink %>"></div>
+<% } %>
+```
 * 打开文件 `\themes\landscape\layout\_partial\after-footer.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
@@ -146,7 +153,11 @@ title: 文章已经搬家了，正在跳转
 1. 在github创建Repository
 创建的时候注意Repository的名字。比如我的Github账号是**fzred**，那么我应该创建的Repository的名字是：**fzred.github.io** 。
 然后copy ssh url，注意是 **ssh** 的，不然 `hexo d` 无法上传到github上。
-2. 修改 `_config.yml` 
+2. 安装 hexo-deployer-git
+```bash
+npm install hexo-deployer-git --save
+```
+3. 修改 `_config.yml` 
 ```bash
 deploy:
   type: git
@@ -154,18 +165,18 @@ deploy:
   branch: master
   message: hexo deploy
 ```
-3. 设置SSH keys
+4. 设置SSH keys
 怎么设置[参考](http://jingyan.baidu.com/article/a65957f4e91ccf24e77f9b11.html),
 验证是否成功
 ```bash
 ssh -T git@github.com
 ```
-4. 最后使用hexo发布到github上
+5. 最后使用hexo发布到github上
 ``` bash
 hexo g
 hexo d
 ```
-5. 到这就能访问了 [fzred.github.io](http://fzred.github.io) , fzred换成你自己的名字
+6. 到这就能访问了 [fzred.github.io](http://fzred.github.io) , fzred换成你自己的名字
 
 ## github pages域名绑定
 1. 添加两条域名A记录的域名解析IP分别是 **192.30.252.153** 、**192.30.252.154** 
