@@ -108,16 +108,16 @@ duoshuo_shortname: lred #你在 多说 的域名 比如我说是 lred.duoshuo.co
 * 打开文件 `\themes\landscape\layout/_partial/article.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
-<% if (config.disqus_shortname){ %>
+<% if (config.duoshuo_shortname){ %>
  <div id="ds-thread" class="ds-thread" data-thread-key="<%= post.path %>" data-title="<%= post.title %>" data-url="<%= post.permalink %>"></div>
 <% } %>
 ```
 * 打开文件 `\themes\landscape\layout\_partial\after-footer.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
-<% if (config.disqus_shortname){ %>
+<% if (config.duoshuo_shortname){ %>
 <script>
-  var disqus_shortname = '<%= config.disqus_shortname %>';
+  var duoshuo_shortname = '<%= config.duoshuo_shortname %>';
   <% if (page.permalink){ %>
   var disqus_url = '<%= page.permalink %>';
   <% } %>
@@ -125,7 +125,7 @@ duoshuo_shortname: lred #你在 多说 的域名 比如我说是 lred.duoshuo.co
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+    dsq.src = '//' + duoshuo_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
