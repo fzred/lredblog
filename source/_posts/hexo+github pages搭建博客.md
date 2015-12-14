@@ -26,6 +26,7 @@ render_drafts: true
 * [部署到github pages上](#部署到github_pages上)
 * [github pages域名绑定](#github_pages域名绑定)
 * [常用插件](#常用插件)
+* [常见问题](#常见问题)
 
 ## hexo介绍
 Hexo 是一个简单地、轻量地、基于Node的一个静态博客框架。不需要数据库，写完md文件直接生成html文件，文章评论使用社会化评论插件，文章搜索配合swiftype也可以很好解决。markdown的写作方式很适合程序员，我表示用起来非常爽。。。
@@ -108,16 +109,16 @@ duoshuo_shortname: lred #你在 多说 的域名 比如我说是 lred.duoshuo.co
 * 打开文件 `\themes\landscape\layout/_partial/article.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
-<% if (!index && config.disqus_shortname){ %>
+<% if (!index && config.duoshuo_shortname){ %>
  <div id="ds-thread" class="ds-thread" data-thread-key="<%= post.path %>" data-title="<%= post.title %>" data-url="<%= post.permalink %>"></div>
 <% } %>
 ```
 * 打开文件 `\themes\landscape\layout\_partial\after-footer.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
-<% if (!index && config.disqus_shortname){ %>
+<% if (!index && config.duoshuo_shortname){ %>
 <script>
-  var disqus_shortname = '<%= config.disqus_shortname %>';
+  var duoshuo_shortname = '<%= config.duoshuo_shortname %>';
   <% if (page.permalink){ %>
   var disqus_url = '<%= page.permalink %>';
   <% } %>
@@ -125,7 +126,7 @@ duoshuo_shortname: lred #你在 多说 的域名 比如我说是 lred.duoshuo.co
     var dsq = document.createElement('script');
     dsq.type = 'text/javascript';
     dsq.async = true;
-    dsq.src = '//' + disqus_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
+    dsq.src = '//' + duoshuo_shortname + '.disqus.com/<% if (page.comments) { %>embed.js<% } else { %>count.js<% } %>';
     (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
   })();
 </script>
@@ -200,3 +201,9 @@ npm install hexo-generator-feed --save
 npm install hexo-generator-sitemap --save
 ```
   之后重新部署，访问/sitemap.xml,可以把sitemap提交到搜索引擎的站长平台来增加收录。
+
+
+
+## 常见问题
+1. 改了样式不生效，本地预览没问题，上传到git后还是原来的样式。
+解决方法：把本地的*public*文件夹删除了，再生成发布
