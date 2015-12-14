@@ -108,14 +108,14 @@ duoshuo_shortname: lred #你在 多说 的域名 比如我说是 lred.duoshuo.co
 * 打开文件 `\themes\landscape\layout/_partial/article.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
-<% if (config.disqus_shortname){ %>
+<% if (!index && config.disqus_shortname){ %>
  <div id="ds-thread" class="ds-thread" data-thread-key="<%= post.path %>" data-title="<%= post.title %>" data-url="<%= post.permalink %>"></div>
 <% } %>
 ```
 * 打开文件 `\themes\landscape\layout\_partial\after-footer.ejs` 最后添加
 ```html
 <!-- 多说公共js代码 end -->
-<% if (config.disqus_shortname){ %>
+<% if (!index && config.disqus_shortname){ %>
 <script>
   var disqus_shortname = '<%= config.disqus_shortname %>';
   <% if (page.permalink){ %>
