@@ -1,7 +1,7 @@
 title: 记一次iOS下touch事件遇到的坑
 categories: 笔记
 date: 2015-12-10 06:09:41
-tags:
+tags: [移动端]
 ---
 <!--摘要-->
 <!--more-->

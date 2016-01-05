@@ -37,14 +37,14 @@ date: 2015-12-14 15:45:46
 * 1990坦克大战
 
 	使用技能：html5 canvas、js.
-	使用html5 canvas技术. [项目git地址](http://git.oschina.net/lred/html5_Battle-City)
+	使用html5 canvas技术. [项目git地址](https://github.com/fzred/Battle-City)
 * 斗地主游戏
 	
 	使用技术：Nodejs、Phaser、Canvas
 	多人斗地主游戏，支持与AI对战。
 
 ## 教育经历
-最高学历：高中。自学编程。如果贵司对学历有要求，只能说我们无缘。
+学历就不说了，高中，自学的编程。that is it...
 
 
 ***

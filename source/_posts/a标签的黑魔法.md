@@ -1,11 +1,11 @@
 title: a标签的黑魔法
 categories: 前端
 date: 2016-01-05 16:07:18
-tags:
+tags: [js]
 ---
 <!--摘要-->
 <!--more-->
-### 问题
+## 问题
 在Js中需要根据相对路径拿到绝对路径时，因为网站目录不固定，有本地地址，测试地址，生产地址
 ```
 http://127.0.0.1:8088/index.html
@@ -47,3 +47,7 @@ absolutize('./static/img.png',"http://baidu.com")
 ```
 
 这里也是做下笔记，在碰到这问题之前，我甚至都不知道还有 [document.implementation](https://developer.mozilla.org/en-US/docs/Web/API/DOMImplementation/createHTMLDocument) 这东西
+
+**ps：**
+这a标签的用法在这里IE6这老古董有点兼容问题，这里就不阐述了。看这文章 
+[Getting an absolute URL from a relative one.](http://stackoverflow.com/questions/470832/getting-an-absolute-url-from-a-relative-one-ie6-issue)
