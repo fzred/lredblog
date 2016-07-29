@@ -1,0 +1,35 @@
+img.ball-img{
+    vertical-align: middle;
+    width: 1.2em !important;
+    height: 1.2em !important;
+    margin-left: 5px;
+}
+.content-home .slogan{
+    font-size:14px;
+}
+.page-header .box-blog-info .info .name{
+    color: #504f4f;
+}
+.page-header .box-blog-info .info .slogan{
+    font-size:14px;
+    margin-top: 5px;
+}
+.item-year{
+    display:none;
+}
+.content{
+    border:none;
+}
+.item-post{
+    margin-bottom: 30px;
+}
+.breadcrumb{
+    display:none;
+}
+.name{
+    font-family: inherit !important;
+    font-weight: 500 !important;
+}
+.pagination .page-nav .page-number{
+    font-family: inherit !important;
+}
