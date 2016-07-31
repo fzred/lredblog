@@ -1,0 +1,5 @@
+<ul>
+<% site.posts.each(function(post){ %>
+    <li><a href="<%= url_for(post.path) %>"><%= post.title %></a></li>
+<% }) %>
+</ul>
