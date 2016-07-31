@@ -1,35 +1,109 @@
-img.ball-img{
-    vertical-align: middle;
-    width: 1.2em !important;
-    height: 1.2em !important;
-    margin-left: 5px;
+.content {
+    width: 760px;
 }
-.content-home .slogan{
-    font-size:14px;
+
+@media screen and (max-width: 768px) {
+    .content.content-post .page-header {
+        padding: 0 10px;
+    }
+    .content.content-post {
+        margin-top: 30px;
+    }
 }
-.page-header .box-blog-info .info .name{
-    color: #504f4f;
+
+@media screen and (min-width: 768px) {
+    .content {
+        width: 760px !important;
+    }
+
+    .fexo-comments {
+        width: 760px !important;
+    }
+
+    .content.content-post {
+        margin-top: 40px;
+    }
 }
-.page-header .box-blog-info .info .slogan{
-    font-size:14px;
-    margin-top: 5px;
+
+.item-year {
+    display: none;
 }
-.item-year{
-    display:none;
+
+.content {
+    border: none;
 }
-.content{
-    border:none;
-}
-.item-post{
+
+.item-post {
     margin-bottom: 30px;
 }
-.breadcrumb{
-    display:none;
+
+.breadcrumb {
+    display: none;
 }
-.name{
+
+.name {
     font-family: inherit !important;
     font-weight: 500 !important;
 }
-.pagination .page-nav .page-number{
+
+.pagination .page-nav .page-number {
     font-family: inherit !important;
+}
+
+.item-post .post-title {
+    display: inline;
+    white-space: normal;
+}
+
+.article-category {
+    display: none;
+}
+
+.header-nav {
+    min-height: 60px
+}
+
+.header-nav .logo-link {
+    float: left
+}
+
+.header-nav .nav {
+    float: right;
+    left: 80px;
+    margin: 0;
+}
+
+.header-nav .logo-link img {
+    height: 60px
+}
+
+.header-nav .nav-list-item {
+    display: inline-block;
+    padding: 19px 10px
+}
+
+.header-nav .nav-list-item a {
+    font-size: 14px;
+    line-height: 1.4;
+    color: #2c3e50;
+}
+
+.header-nav .nav-list-item a:hover, .header-nav .nav-list-item.active a {
+    border-bottom: 2px solid #42b983;
+}
+
+@media screen and (max-width: 767px) {
+    .header-nav {
+        padding: 20px 0
+    }
+
+    .header-nav a.logo-link, .header-nav ul.nav.nav-list {
+        float: none;
+        display: block;
+        text-align: center
+    }
+
+    .header-nav li.nav-list-item {
+        padding: 2px 5px
+    }
 }

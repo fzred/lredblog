@@ -1,26 +1,51 @@
 <div class="page-header">
 
-  <% if(theme.breadcrumb && theme.breadcrumb.isShow == true) { %>
+    <% if(theme.breadcrumb && theme.breadcrumb.isShow == true) { %>
     <div class="breadcrumb">
-      <div class="location"><%= location %></div>
-      <i class="icon-location"></i>
+        <div class="location"><%= location %></div>
+        <i class="icon-location"></i>
     </div>
-  <% } %>
+    <% } %>
 
-  <%- partial('toolbox') %>
-
-  <div class="box-blog-info">
-    <a class="avatar" href="/">
-      <img src="<%= theme.avatar %>" alt="" />
-    </a>
-    <div class="info">
-      <h3 class="name" style="font-family: <%= theme.blog_name_font_familiy || 'calligraffittiregular' %>">
-        <%= theme.blog_name %>
-      </h3>
-      <div class="slogan">
-        <%- theme.slogan %>
-      </div>
+    <%- partial('toolbox') %>
+    <% if (false) { %>
+    <div class="box-blog-info">
+        <a class="avatar" href="/">
+            <img src="<%= theme.avatar %>" alt=""/>
+        </a>
+        <div class="info">
+            <h3 class="name" style="font-family: <%= theme.blog_name_font_familiy || 'calligraffittiregular' %>">
+                <%= theme.blog_name %>
+            </h3>
+            <div class="slogan">
+                <%- theme.slogan %>
+            </div>
+        </div>
     </div>
-  </div>
+    <% } %>
+    <header class="header-nav">
+        <a href="/" class="logo-link"><img src="<%= theme.avatar %>"></a>
+        <ul class="nav nav-list">
+            <li class="nav-list-item" home><a href="/" target="_self" class="nav-list-link">BLOG</a></li>
+            <li class="nav-list-item" project><a href="/project" class="nav-list-link">PROJECT</a></li>
+            <li class="nav-list-item" about><a href="/about" class="nav-list-link">ABOUT</a></li>
+            <li class="nav-list-item" search><a href="/search" class="nav-list-link">SEARCH</a></li>
+            <li class="nav-list-item" link><a href="/link" class="nav-list-link">LINK</a></li>
+            <li class="nav-list-item"><a href="https://github.com/fzred" target="_blank"
+                                         class="nav-list-link">GITHUB</a></li>
+            <li class="nav-list-item"><a href="/atom.xml" target="_blank" class="nav-list-link">RSS</a></li>
+        </ul>
+    </header>
 
 </div>
+<script>
+    (function () {
+        var match = location.pathname.match(/^\/([^/]*)\/$/)
+        if (match) {
+            var path = match[1]
+            document.querySelector('.nav-list-item[' + path + ']').classList.add('active')
+        } else {
+            document.querySelector('.nav-list-item[home]').classList.add('active')
+        }
+    })()
+</script>
