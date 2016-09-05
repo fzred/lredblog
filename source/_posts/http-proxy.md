@@ -57,7 +57,7 @@ http.createServer(app).listen('1003', function () {
 })
 ```
 `http-proxy`的详细配置看这里[https://github.com/nodejitsu/node-http-proxy](https://github.com/nodejitsu/node-http-proxy)
-
+相对于其他方案，写自己的代理服务是最灵活可控的。
 
 -----
 ## 2. Access-Control-Allow-Origin
