@@ -144,6 +144,11 @@ about:
     icon: icon-mail
     text_key: Email
     text_value: "i@lred.me"
+  - type: project
+    icon: icon-github
+    text_key: project
+    text_value: "look"
+    text_value_url: "/project"
   - type: location
     icon: icon-location
     text_value: 深圳
