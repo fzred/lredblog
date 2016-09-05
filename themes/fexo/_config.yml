@@ -1,5 +1,5 @@
 # Blog info
-blog_name: 艾边成 Lred
+blog_name: 方增鸿 Lred
 slogan: 不管，我就要干拔<img class="ball-img" src="https://assets-cdn.github.com/images/icons/emoji/unicode/1f3c0.png">
 url: http://www.lred.me
 
@@ -10,7 +10,7 @@ avatar: /images/headimg_dl.png
 favicon: /images/headimg_dl.png
 
 # For seo
-keywords: lred,redl,前端,前端开发,fzred,艾边成,nodejs,JavaScript
+keywords: lred,redl,前端,前端开发,fzred,方增鸿,nodejs,JavaScript
 
 home_nav:
   - name: Blog
@@ -133,7 +133,7 @@ about:
     icon: icon-user
     text_value:
     - "1996."
-    - "沉迷于编程，日降消瘦."
+    - "沉迷于编程，日渐消瘦."
     - "前端开发工程师，常用 HTML / CSS / JavaScript."
   - type: Github
     icon: icon-github
