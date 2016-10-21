@@ -147,7 +147,7 @@ about:
   - type: project
     icon: icon-github
     text_key: project
-    text_value: "look"
+    text_value: "see"
     text_value_url: "/project"
   - type: location
     icon: icon-location
@@ -160,6 +160,10 @@ link:
     avatar: https://assets-cdn.github.com/images/icons/emoji/unicode/1f466.png
 
 project:
+  - type: personal
+    name: fetch-dog
+    url: https://github.com/fzred/fetch-dog
+    intro: 基于 fetch 的 HTTP 请求客户端，支持node.js，浏览器，react-native 
   - type: personal
     name: gulp-local-css
     url: https://github.com/fzred/gulp-local-css
