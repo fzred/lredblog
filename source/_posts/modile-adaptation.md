@@ -15,12 +15,21 @@ tags:
 
 ## 展望未来 vm
 
-## 不要用 fixed
+## html+css基础布局
+### 不要使用**isScroll**之类的库。
+
+
+### 不要用 fixed
 `position:fixed ` 这css属性在ios上就是个坑
 * 滑动时会抖动
 * 软键盘弹出来时，fixed失效，滚动页面，加了fixed的元素也会跟着滚动
+* 滚动容器加了`-webkit-overflow-scrolling: touch` ，滚动时fixed不会跟着屏幕固定，停止滚动后才会固定
 
-## 弹层怎么搞
+总之就是不要用 `position:fixed `。别急，下面有其他替代fixed的解决方案。
+
+### 弹层怎么搞
+
+### 最挂方案：使用内滚动
 
 
 ## 碰到的坑 
