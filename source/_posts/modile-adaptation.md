@@ -14,11 +14,14 @@ tags:
 [移动端高清、多屏适配方案](http://www.html-js.com/article/Mobile-terminal-H5-mobile-terminal-HD-multi-screen-adaptation-scheme%203041)
 [使用Flexible实现手淘H5页面的终端适配](http://www.w3cplus.com/mobile/lib-flexible-for-html5-layout.html)
 
+---
 
 ## 展望未来 vm
 基于rem布局的缩放布局都需要依赖JS去计算基准值，而使用vm则很简单的就能实现百分比缩放布局。
 1vw表示百分之一的视窗宽度，同理10vw就是百分之十。但因兼容性方面限制，在国内目前是无法展示vw的身手了，相信未来vw会是主流。
 查看兼容：[http://caniuse.com/#search=vw](http://caniuse.com/#search=vw)
+
+---
 
 ## html+css基础布局
 ### 不要用 **fixed**
@@ -27,18 +30,44 @@ tags:
 * 软键盘弹出来时，fixed失效，滚动页面，加了fixed的元素也会跟着滚动
 * 滚动容器加了`-webkit-overflow-scrolling: touch` ，滚动时fixed不会跟着屏幕固定，停止滚动后才会固定
 
-总之就是不要用 `position:fixed `。别急，下面有其他替代fixed的解决方案。
+**解决方案**
+* 使用div内滚动**（推荐）**
+* 用position:absolute模拟，这个效果不佳，类似IE6的hack...
+* 当input元素focus时，改成position:absolute，blur的时候再改回来
+* 使用iscroll库
+
+总之就是不要用 `position:fixed `，然后使用div内滚动。
 
 ### 不要使用**iScroll**之类的库。
-因为性能！还有一点模拟的惯性滚动跟原生有体验习惯上的差异。上拉刷新下拉加载又或是解决ios fixed的坑，都有基于原生滚动的解决方案。
-**模拟的滚动容量慎用**
+**慎用模拟滚动容器**，因为性能！还有一点模拟的惯性滚动跟原生有体验习惯上的差异。如果是为了解决上拉刷新下拉加载又或是ios fixed的坑，都有基于原生滚动的解决方案。
 
-### 弹层怎么搞
+
+### 弹层用fixed定位？
+如果确保弹层上没有input，那倒随意（absolute或fixed），能定位就行，如果有input，那fixed又要开始坑了。
+
+弹层主要解决的坑是：**滚动穿透**， 移动端弹出fixed弹层，在弹层上滑动会导致下层的页面跟着滚动。
+**解决方案**
+* 使用div内滚动**（推荐）**
+
+* touchmove + preventDefault 阻止滚动
+    缺点：需要配合JS
+
+* body overflow: hidden
+    缺点：需要配合JS
+
+* body position: fixed
+    缺点：需要配合JS
+
+后面3种的解决方案，就不详细说了，看文章[https://segmentfault.com/a/1190000005617307](https://segmentfault.com/a/1190000005617307)。
+
 
 ### 最挂方案：使用内滚动
 
+---
 
 ## 关于flex
+
+---
 
 ## 碰到的坑 
 * 在android webview里，获取的font-size会受到系统设置字体大小的影响，可用下面这两行代码测试
