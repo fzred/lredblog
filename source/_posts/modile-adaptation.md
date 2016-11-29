@@ -61,7 +61,86 @@ tags:
 后面3种的解决方案，就不详细说了，看文章[https://segmentfault.com/a/1190000005617307](https://segmentfault.com/a/1190000005617307)。
 
 
-### 最挂方案：使用内滚动
+### 最挂方案：使用内滚动布局
+基于上述的一些问题，目前使用内滚动布局是最好的解决方案。
+首先，内滚动那就先把window的滚动条干掉，然后给个div设置滚动取代window的滚动。
+基本的html
+```html
+<body>
+<div class="scrollWrapper">
+    <div style="height:2000px;background:#ff9">内容<br><br><br>
+    </div>
+</div>
+</body>
+```
+```css
+html, body, .scrollWrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollWrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;;
+}
+```
+再模拟fixed元素及弹层
+```html
+<body>
+<div class="layer" style="display:none;">
+    我是弹层，滑动不会穿透
+</div>
+<div class="scrollWrapper">
+    <div style="height:2000px;background:#ff9">内容<br><br><br>
+        <input type="text"/>
+        <button onclick="showLayer()">点击显示弹层</button>
+    </div>
+</div>
+<footer class="footer">
+    <a>menu1</a>
+    <a>menu2</a>
+</footer>
+<script>
+  function showLayer() {
+    document.querySelector('.layer').style.display = 'block'
+  }
+</script>
+</body>
+```
+```css
+html, body, .scrollWrapper {
+  height: 100%;
+  overflow: hidden;
+}
+
+.scrollWrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-y: auto;;
+}
+
+footer.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #f00;
+}
+
+.layer {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: rgba(0, 0, 0, .8);
+  z-index: 1;
+}
+```
+例子完整代码：[https://github.com/fzred/example/tree/master/mobile-layout](https://github.com/fzred/example/tree/master/mobile-layout)
+
+在手机上看看试试 ：[http://www.lred.me/example/mobile-layout/index.html](http://www.lred.me/example/mobile-layout/index.html) ，可以扫下面的二维码
+
+<img width=250 src="http://ww3.sinaimg.cn/large/005FY9HCgw1fa9gitgs5ij30r80r874z.jpg"/>
 
 ---
 
