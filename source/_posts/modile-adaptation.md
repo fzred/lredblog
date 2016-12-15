@@ -117,4 +117,16 @@ Safair就不会有这问题。IOS8以后苹果开放了WKWebView，使用的是�
 ### -webkit-overflow-scrolling touch 带来的问题：滚动穿透
 在上面 *html+css基础布局 —— 弹层用fixed定位？* 这一节有讨论
 
+
+### safair后退javascript不执行
+先记着，后面补充
+
+## 技巧
+
+---
+
+### 判断后退操作
+
+###
+
 *碰到的坑，持续更新*
