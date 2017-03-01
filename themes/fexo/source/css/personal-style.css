@@ -1,7 +1,21 @@
+body {
+  background: #FAF9DE;
+}
+.page-header {
+    background: transparent;
+}
 .content {
     width: 760px;
 }
-
+.article-content blockquote{
+    background: #eaead0;
+}
+figure.highlight{
+    background-color: rgba(179, 179, 179, 0.16);
+}
+.highlight .gutter pre{
+    display: none;
+}
 @media screen and (max-width: 768px) {
     .content.content-post .page-header {
         padding: 0 10px;
@@ -68,8 +82,8 @@
 }
 
 .header-nav .nav {
-    float: right;
-    left: 80px;
+    /*float: right;
+    left: 80px;*/
     margin: 0;
 }
 
