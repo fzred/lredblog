@@ -1,7 +1,9 @@
 <div class="content content-about">
   <%- partial('_partial/component/page-header', {location: '关于'}) %>
- <img src="<%= theme.avatar %>">
-  <ul class="about-list">
+  <div class="article-content">
+      <%- page.content %>
+  </div>
+  <ul class="about-list" style="display:none">
     <% theme.about.forEach(function(item, i){ %>
       <li class="about-item">
         <% if( item.icon) {%>
