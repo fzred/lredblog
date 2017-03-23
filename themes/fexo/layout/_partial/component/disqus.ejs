@@ -1,4 +1,4 @@
-<% if (theme.disqus_shortname){ %>
+<% if (theme.disqus_shortname && false){ %>
   <section class="disqus-comments">
     <div id="disqus_thread">
       <noscript>Please enable JavaScript to view the <a href="//disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -22,3 +22,27 @@
   <script id="dsq-count-scr" src="//<%= theme.disqus_shortname %>.disqus.com/count.js" async></script>
 
 <% } %>
+
+<% if( theme.disqus_shortname ){ %>
+<div id="disqus_thread"></div>
+<script>
+var disqus_shortname = '<%= theme.disqus_shortname %>';
+/**
+*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+/*
+var disqus_config = function () {
+this.page.url = "<%= url %>";  // your page's canonical URL variable
+this.page.identifier = "<%= page.path %>"; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+};
+*/
+(function() { // DON'T EDIT BELOW THIS LINE
+var d = document, s = d.createElement('script');
+s.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+s.setAttribute('data-timestamp', +new Date());
+(d.head || d.body).appendChild(s);
+})();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+                                
+<%}%>

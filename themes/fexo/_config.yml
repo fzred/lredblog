@@ -121,8 +121,8 @@ google_analytics:
 baidu_analytics: 6b3c10d33962f5dff87fee3a9fa34391
 
 # Comment service
-# disqus_shortname: forsigner
-duoshuo_shortname: lred
+disqus_shortname: lred
+# duoshuo_shortname:
 
 
 # =========================================================
