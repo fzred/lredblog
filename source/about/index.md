@@ -8,11 +8,11 @@ layout: about
 96年出生，目前在深圳，任职于某互联网公司的前端工程师职位。
 
 ### 本博客
-有感而发，记录一些技术、思想。想关注我的吐槽请移步微博 [lredme](http://www.weibo.com/lredme) 。
+有感而发，记录一些技术、思想。想关注我的吐槽请移步微博 [lredme](http://www.weibo.com/lredme?is_all=1) 。
 
 ### 联系方式
 GitHub：[fzred](https://github.com/fzred)
-微博：[lredme](http://www.weibo.com/lredme)
+微博：[lredme](http://www.weibo.com/lredme?is_all=1)
 Email：i@lred.me
 
 ### 有人叫我“土豆”？
